@@ -15,11 +15,11 @@ def health():
 async def message_stream(request: Request):
 
     model_inputs = await request.json()
-    print(model_inputs["modelInputs"])
+    print(model_inputs)
     
     async def event_generator():
 
-        output = user_src.inference(model_inputs["modelInputs"])
+        output = user_src.inference(model_inputs)
         for i in output:
             print(i)
             yield {
