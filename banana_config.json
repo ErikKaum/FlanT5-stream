@@ -1,0 +1,11 @@
+{
+    "name": "FlanT5 stream",
+    "category": "Natural Language",
+    "example_input": {
+        "prompt": "Tell me something about Paris"
+    },
+    "example_output": {
+        "output": "'it's' \n 'the' \n 'capital \n 'of' \n 'France' \n '[DONE]'"
+    },
+    "version": "1"
+  }

@@ -1,0 +1,9 @@
+
+# fork of huggingface transformers with streaming hack
+git+https://github.com/ErikKaum/transformers-stream-hack
+
+sentencepiece
+torch
+sse-starlette
+fastapi[all]
+asyncio
