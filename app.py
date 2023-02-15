@@ -9,7 +9,7 @@ def init():
     
     device = 0 if torch.cuda.is_available() else -1
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-small")
-    model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-small").to("cuda")
+    model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-small")
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
@@ -23,9 +23,8 @@ def inference(model_inputs:dict) -> dict:
         return {'message': "No input_text provided"}
     
     # Run the model with a hack
-    input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to("cuda")
+    input_ids = tokenizer(input_text, return_tensors="pt").input_ids
     outputs = model.generate(input_ids, max_length=200)
     for i in outputs:
-        print(i)
         yield tokenizer.decode(i)
 
