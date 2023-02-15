@@ -19,7 +19,7 @@ async def message_stream(request: Request):
     
     async def event_generator():
         print("here")
-        output = user_src.inference(model_inputs['modelInputs'])
+        output = user_src.inference(model_inputs)
         print(output)
         for i in output:
             print(i)
